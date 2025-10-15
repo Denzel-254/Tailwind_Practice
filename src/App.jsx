@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Header from './Components/Header'
+import Hero from './Components/Hero'
+import Stats from './Components/Stats'
+import Testimonials from './Components/Testimonials'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Header />
+      <Hero />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-10 mx-auto">
+        <Stats title="50+" description="Complete projects" />
+        <Stats title="20+" description="Ongoing projects" />
+        <Stats title="100+" description="Total tasks" />
+        <Stats title="5+" description="Team members " />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-10 mx-auto' >
+        <Testimonials testimonials="This service is fantastic! Highly recommend." client="Jane Smith" clientName="Happy Client" />
+        <Testimonials testimonials="A game changer for our business." client="John Doe" clientName="Satisfied Customer" />
+        <Testimonials testimonials="Exceptional quality and support." client="Alice Johnson" clientName="Loyal Client" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
+
   )
 }
 
